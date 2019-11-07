@@ -7,11 +7,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DEMO</title>
 
-    <script src="./popup-promo.js"></script>
+    <script src="./popup-promo/popup-promo.js"></script>
 </head>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        popupPromo.show({
+            image: "https://cyhsu1989.github.io/LandingPage-Natours/src/images/nat-8.jpg",
+            title: "Start Booking Now",
+            subtitle: "Impartant – Please read these terms before booking",
+            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat tempore ducimus natus animi quam aut iusto id, eum optio voluptatem quaerat voluptate esse, accusantium aperiam nobis aliquid dolores blanditiis eligendi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse incidunt accusamus accusantium autem qui itaque eligendi fugiat ducimus voluptates quis voluptatum veritatis sequi perferendis nesciunt, quaerat, tempore ratione asperiores ipsum!",
+            link: "https://www.google.com",
+            linkName: "Book Now",
+            duration: "" // optional
+        });
+    });
+</script>
+<style>
+    body {
+        height: 1500px;
+    }
+</style>
 
 <body>
-
+    <div id="popup-promo"></div>
 </body>
 
 </html>
