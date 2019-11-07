@@ -30,6 +30,13 @@
 			document
 				.querySelector("#popup-promo .popup-promo__close")
 				.addEventListener("click", this.close);
+
+			if (promoInfo.duration) {
+				setTimeout(
+					() => this.close(),
+					parseInt(promoInfo.duration, 10) * 1000
+				);
+			}
 		};
 
 		_module.close = function() {
