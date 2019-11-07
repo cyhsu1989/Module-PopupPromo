@@ -21,12 +21,27 @@
                         <h2 class="popup-promo__title">${promoInfo.title}</h2>
                         <h3 class="popup-promo__subtitle">${promoInfo.subtitle}</h3>
                         <p class="popup-promo__description">${promoInfo.description}</p>
-                        <a href="${promoInfo.link}" class="popup-promo__link">${promoInfo.linkName} &rarr;</a>
+                        <a href="${promoInfo.link}" class="popup-promo__link" target="_blank">${promoInfo.linkName} &rarr;</a>
                     </div>
                 </div>
             </div>`;
 
 			document.getElementById("popup-promo").innerHTML = template;
+			document
+				.querySelector("#popup-promo .popup-promo__close")
+				.addEventListener("click", this.close);
+		};
+
+		_module.close = function() {
+			document
+				.querySelector("#popup-promo .popup-promo")
+				.classList.add("popup-promo--close");
+		};
+
+		_module.open = function() {
+			document
+				.querySelector("#popup-promo .popup-promo")
+				.classList.remove("popup-promo--close");
 		};
 
 		return _module;
