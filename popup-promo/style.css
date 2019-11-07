@@ -38,6 +38,9 @@
 }
 
 .popup-promo__left {
+	display: flex;
+	align-items: center;
+	padding: 30px;
 	flex: 0 0 34%;
 	overflow: hidden;
 }
@@ -49,7 +52,7 @@
 
 .popup-promo__right {
 	flex: 1;
-	padding: 30px 50px;
+	padding: 30px 30px;
 }
 
 .popup-promo__title {
@@ -59,6 +62,7 @@
 	display: inline-block;
 	font-size: 35px;
 	font-weight: 700;
+	line-height: 1.2;
 	letter-spacing: 2px;
 	margin: 0;
 	margin-bottom: 15px;
@@ -92,14 +96,17 @@
 	border-bottom: 1px solid #55c57a;
 	padding: 3px;
 	transition: all 0.2s;
+	animation: moveUpAndDown 0.5s ease-out 0.75s infinite;
 }
 .popup-promo__link:hover {
+	animation: none;
 	background-color: #55c57a;
 	color: #fff;
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 	transform: translateY(-2px);
 }
 .popup-promo__link:active {
+	animation: none;
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
 	transform: translateY(0);
 }
@@ -126,6 +133,10 @@
 		flex-direction: column;
 	}
 
+	.popup-promo__left {
+		padding: 0;
+	}
+
 	.popup-promo__description {
 		column-count: initial;
 	}
@@ -134,5 +145,19 @@
 	.popup-promo__close:visited {
 		box-shadow: 0 20px 40px rgba(256, 256, 256, 0.2);
 		color: #fff;
+	}
+}
+
+@keyframes moveUpAndDown {
+	0% {
+		transform: translateX(0);
+	}
+
+	50% {
+		transform: translateX(-3px);
+	}
+
+	100% {
+		transform: translateX(0);
 	}
 }
